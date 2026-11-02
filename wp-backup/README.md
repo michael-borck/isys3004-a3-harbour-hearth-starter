@@ -42,7 +42,8 @@ of the things you may need to fix.
 
 ## Build the `.wpress` from the starter (coordinator)
 
-Use a LocalWP site named `harbour-hearth-a3`. In the LocalWP site shell:
+Use a LocalWP site named `harbour-hearth` so the URL matches the setup docs.
+In the LocalWP site shell:
 
 1. Install the plugins:
 
