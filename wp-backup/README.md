@@ -40,6 +40,42 @@ is on a different origin (LocalWP or Playground), you will need to point
 `assets/js/team.js` and the booking form action at the WordPress URL. That is one
 of the things you may need to fix.
 
+## Build the `.wpress` from the starter (coordinator)
+
+Use a LocalWP site named `harbour-hearth-a3`. In the LocalWP site shell:
+
+1. Install the plugins:
+
+   ```bash
+   wp plugin install wp-super-cache ml-slider classic-editor
+   wp plugin activate wp-super-cache
+   ```
+
+2. Seed the content:
+
+   ```bash
+   wp eval-file /path/to/provided/a3-harbour-hearth-starter/wp-backup/seed-localwp.php
+   ```
+
+   Use the real path to this repository.
+
+3. Install the exporter:
+
+   ```bash
+   wp plugin install all-in-one-wp-migration --activate
+   ```
+
+4. In WP Admin, go to **All-in-One WP Migration > Export > Export to > File**
+   and download the `.wpress`.
+
+5. Upload it to Blackboard and replace the TBC link at the top of this file.
+
+6. Test the restore in a fresh LocalWP site.
+
+The LocalWP site URL becomes the restored site's URL. If you use
+`harbour-hearth.local`, the docs match. On a lab machine, use `127.0.0.1` and
+run one site at a time.
+
 ## Restore steps (LocalWP)
 
 1. Install **LocalWP**: <https://localwp.com/>.
