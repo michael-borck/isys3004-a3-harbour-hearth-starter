@@ -1,0 +1,18 @@
+{
+  "items": [
+    { "name": "Sourdough loaf", "quantity": 24, "unit": "loaves" },
+    { "name": "Seeded rye", "quantity": 18, "unit": "loaves" },
+    { "name": "Butter croissant", "quantity": 36, "unit": "pieces" },
+    { "name": "Pain au chocolat", "quantity": 21, "unit": "pieces" },
+    { "name": "Cinnamon bun", "quantity": 14, "unit": "pieces" },
+    { "name": "Lemon tart", "quantity": 9, "unit": "slices" },
+    { "name": "Carrot cake", "quantity": 7, "unit": "slices" },
+    { "name": "Flat white", "quantity": 40, "unit": "cups" },
+    { "name": "Long black", "quantity": 35, "unit": "cups" },
+    { "name": "Filter coffee", "quantity": 22, "unit": "cups" },
+    { "name": "House red (glass)", "quantity": 12, "unit": "glasses" },
+    { "name": "House white (glass)", "quantity": 10, "unit": "glasses" },
+    { "name": "Cheese plate", "quantity": 6, "unit": "plates" },
+    { "name": "Olives", "quantity": 4, "unit": "bowls" }
+  ]
+}

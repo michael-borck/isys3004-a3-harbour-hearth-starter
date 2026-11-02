@@ -1,0 +1,43 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "latest"
+  },
+  "landingPage": "/",
+  "login": true,
+  "features": {
+    "networking": true
+  },
+  "steps": [
+    {
+      "step": "installPlugin",
+      "pluginZipFile": {
+        "resource": "wordpress.org/plugins",
+        "slug": "wp-super-cache"
+      }
+    },
+    {
+      "step": "activatePlugin",
+      "pluginPath": "wp-super-cache/wp-cache.php"
+    },
+    {
+      "step": "installPlugin",
+      "pluginZipFile": {
+        "resource": "wordpress.org/plugins",
+        "slug": "ml-slider"
+      }
+    },
+    {
+      "step": "installPlugin",
+      "pluginZipFile": {
+        "resource": "wordpress.org/plugins",
+        "slug": "classic-editor"
+      }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php\nrequire_once ABSPATH . 'wp-admin/includes/file.php';\n\n$plugin = base64_decode('PD9waHAKLyoKUGx1Z2luIE5hbWU6IEhhcmJvdXIgJiBIZWFydGggQTMgQmFja2VuZApEZXNjcmlwdGlvbjogTmV3cywgdGVhbSBhbmQgYm9va2luZ3MgZm9yIHRoZSBpbmhlcml0ZWQgc2l0ZS4KVmVyc2lvbjogMS4wCiovCgphZGRfYWN0aW9uKCdpbml0JywgZnVuY3Rpb24gKCkgewogICAgcmVnaXN0ZXJfcG9zdF90eXBlKCdib29raW5nJywgWwogICAgICAgICdsYWJlbCcgPT4gJ0Jvb2tpbmdzJywKICAgICAgICAncHVibGljJyA9PiB0cnVlLAogICAgICAgICdzaG93X2luX3Jlc3QnID0+IHRydWUsCiAgICAgICAgJ3N1cHBvcnRzJyA9PiBbJ3RpdGxlJywgJ2VkaXRvcicsICdjdXN0b20tZmllbGRzJ10sCiAgICBdKTsKfSk7CgphZGRfYWN0aW9uKCdyZXN0X2FwaV9pbml0JywgZnVuY3Rpb24gKCkgewogICAgcmVnaXN0ZXJfcmVzdF9yb3V0ZSgnaGgvdjEnLCAnL3RlYW0nLCBbCiAgICAgICAgJ21ldGhvZHMnID0+ICdHRVQnLAogICAgICAgICdwZXJtaXNzaW9uX2NhbGxiYWNrJyA9PiAnX19yZXR1cm5fdHJ1ZScsCiAgICAgICAgJ2NhbGxiYWNrJyA9PiBmdW5jdGlvbiAoKSB7CiAgICAgICAgICAgIHJldHVybiBbCiAgICAgICAgICAgICAgICBbJ25hbWUnID0+ICdNYXJpYSBSb3NzaScsICdzdWJ1cmInID0+ICdDbGFyZW1vbnQnXSwKICAgICAgICAgICAgICAgIFsnbmFtZScgPT4gJ0RldiBQYXRlbCcsICdzdWJ1cmInID0+ICdOb3J0aGJyaWRnZSddLAogICAgICAgICAgICAgICAgWyduYW1lJyA9PiAnU2FtIFRheWxvcicsICdzdWJ1cmInID0+ICdGcmVtYW50bGUnXSwKICAgICAgICAgICAgXTsKICAgICAgICB9LAogICAgXSk7CgogICAgcmVnaXN0ZXJfcmVzdF9yb3V0ZSgnaGgvdjEnLCAnL2Jvb2tpbmdzJywgWwogICAgICAgIFsKICAgICAgICAgICAgJ21ldGhvZHMnID0+ICdHRVQnLAogICAgICAgICAgICAncGVybWlzc2lvbl9jYWxsYmFjaycgPT4gJ19fcmV0dXJuX3RydWUnLAogICAgICAgICAgICAnY2FsbGJhY2snID0+IGZ1bmN0aW9uICgpIHsKICAgICAgICAgICAgICAgICRwb3N0cyA9IGdldF9wb3N0cyhbCiAgICAgICAgICAgICAgICAgICAgJ3Bvc3RfdHlwZScgPT4gJ2Jvb2tpbmcnLAogICAgICAgICAgICAgICAgICAgICdudW1iZXJwb3N0cycgPT4gMjAsCiAgICAgICAgICAgICAgICBdKTsKCiAgICAgICAgICAgICAgICByZXR1cm4gYXJyYXlfbWFwKGZ1bmN0aW9uICgkcG9zdCkgewogICAgICAgICAgICAgICAgICAgIHJldHVybiBbCiAgICAgICAgICAgICAgICAgICAgICAgICdpZCcgPT4gJHBvc3QtPklELAogICAgICAgICAgICAgICAgICAgICAgICAnbmFtZScgPT4gJHBvc3QtPnBvc3RfdGl0bGUsCiAgICAgICAgICAgICAgICAgICAgICAgICdwaG9uZScgPT4gZ2V0X3Bvc3RfbWV0YSgkcG9zdC0+SUQsICdwaG9uZScsIHRydWUpLAogICAgICAgICAgICAgICAgICAgICAgICAnZW1haWwnID0+IGdldF9wb3N0X21ldGEoJHBvc3QtPklELCAnZW1haWwnLCB0cnVlKSwKICAgICAgICAgICAgICAgICAgICAgICAgJ25vdGVzJyA9PiAkcG9zdC0+cG9zdF9jb250ZW50LAogICAgICAgICAgICAgICAgICAgIF07CiAgICAgICAgICAgICAgICB9LCAkcG9zdHMpOwogICAgICAgICAgICB9LAogICAgICAgIF0sCiAgICAgICAgWwogICAgICAgICAgICAnbWV0aG9kcycgPT4gJ1BPU1QnLAogICAgICAgICAgICAncGVybWlzc2lvbl9jYWxsYmFjaycgPT4gJ19fcmV0dXJuX3RydWUnLAogICAgICAgICAgICAnY2FsbGJhY2snID0+IGZ1bmN0aW9uICgkcmVxdWVzdCkgewogICAgICAgICAgICAgICAgJHBhcmFtcyA9ICRyZXF1ZXN0LT5nZXRfanNvbl9wYXJhbXMoKTsKICAgICAgICAgICAgICAgIGlmICghJHBhcmFtcykgewogICAgICAgICAgICAgICAgICAgICRwYXJhbXMgPSAkcmVxdWVzdC0+Z2V0X3BhcmFtcygpOwogICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgICRpZCA9IHdwX2luc2VydF9wb3N0KFsKICAgICAgICAgICAgICAgICAgICAncG9zdF90aXRsZScgPT4gJHBhcmFtc1snbmFtZSddID8/ICdCb29raW5nJywKICAgICAgICAgICAgICAgICAgICAncG9zdF9jb250ZW50JyA9PiAkcGFyYW1zWydub3RlcyddID8/ICcnLAogICAgICAgICAgICAgICAgICAgICdwb3N0X3N0YXR1cycgPT4gJ3B1Ymxpc2gnLAogICAgICAgICAgICAgICAgICAgICdwb3N0X3R5cGUnID0+ICdib29raW5nJywKICAgICAgICAgICAgICAgIF0pOwoKICAgICAgICAgICAgICAgIHVwZGF0ZV9wb3N0X21ldGEoJGlkLCAncGhvbmUnLCAkcGFyYW1zWydwaG9uZSddID8/ICcnKTsKICAgICAgICAgICAgICAgIHVwZGF0ZV9wb3N0X21ldGEoJGlkLCAnZW1haWwnLCAkcGFyYW1zWydlbWFpbCddID8/ICcnKTsKCiAgICAgICAgICAgICAgICByZXR1cm4gWydpZCcgPT4gJGlkLCAnc3RhdHVzJyA9PiAncmVjZWl2ZWQnXTsKICAgICAgICAgICAgfSwKICAgICAgICBdLAogICAgXSk7Cn0pOwo=');\nwp_mkdir_p(WP_CONTENT_DIR . '/mu-plugins');\nfile_put_contents(WP_CONTENT_DIR . '/mu-plugins/hh-a3.php', $plugin);\n\nupdate_option('blogname', 'Harbour & Hearth');\nupdate_option('blogdescription', 'Coffee, bread and private events');\nupdate_option('permalink_structure', '/%postname%/');\n\n$pages = [\n    'News' => 'What is happening at Harbour & Hearth.',\n    'Events' => 'Private events and room hire.',\n    'Bookings' => 'Table and event bookings.',\n    'Contact' => 'Find us and get in touch.',\n];\nforeach ($pages as $title => $content) {\n    if (!get_page_by_path(sanitize_title($title))) {\n        wp_insert_post([\n            'post_title' => $title,\n            'post_content' => $content,\n            'post_status' => 'publish',\n            'post_type' => 'page',\n        ]);\n    }\n}\n\n$news = [\n    ['Winter menu is here', 'The new winter menu starts this week.'],\n    ['Private room refresh', 'The Claremont room has been repainted and reseated.'],\n];\nforeach ($news as $item) {\n    if (!get_page_by_path(sanitize_title($item[0]), OBJECT, 'post')) {\n        wp_insert_post([\n            'post_title' => $item[0],\n            'post_content' => $item[1],\n            'post_status' => 'publish',\n            'post_type' => 'post',\n        ]);\n    }\n}\n\n$bookings = [\n    ['Sam Taylor', '0400 000 001', 'sam@example.com', 'Table for two, Friday'],\n    ['Alex Chen', '0400 000 002', 'alex@example.com', 'Private event, 20 guests'],\n    ['Priya Singh', '0400 000 003', 'priya@example.com', 'Corporate lunch, 12 guests'],\n];\nforeach ($bookings as $booking) {\n    $id = wp_insert_post([\n        'post_title' => $booking[0],\n        'post_content' => $booking[3],\n        'post_status' => 'publish',\n        'post_type' => 'booking',\n    ]);\n    update_post_meta($id, 'phone', $booking[1]);\n    update_post_meta($id, 'email', $booking[2]);\n}\n\nif (!username_exists('olddev')) {\n    $uid = wp_create_user('olddev', 'olddev-pass-2024', 'olddev@example.com');\n    if (!is_wp_error($uid)) {\n        $user = new WP_User($uid);\n        $user->set_role('administrator');\n    }\n}\n\nflush_rewrite_rules();\n"
+    }
+  ]
+}

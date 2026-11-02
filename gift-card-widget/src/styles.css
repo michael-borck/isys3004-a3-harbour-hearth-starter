@@ -1,0 +1,126 @@
+/* Gift card widget - scoped to #gift-card-widget-root so it can override the
+   broad `#gift-card-widget-root button` rule that main.css applies to the
+   submit CTA. The submit <button> intentionally inherits from main.css
+   so the brand colour is consistent with the rest of the site. */
+
+.hh-gift {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 1.25rem;
+    max-width: 420px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    color: #5c5148;
+    line-height: 1.5;
+}
+
+.hh-gift fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+}
+
+.hh-gift legend {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #3a2a20;
+}
+
+.hh-gift__frequency label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-right: 1.25rem;
+    cursor: pointer;
+}
+
+.hh-gift__presets {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Higher specificity needed to escape `#gift-card-widget-root button`
+   from main.css - using the mount-point ID gets us there cleanly. */
+#gift-card-widget-root .hh-gift__preset {
+    background: #f7f3ee;
+    color: #3a2a20;
+    border: 1px solid #d4cec7;
+    border-radius: 4px;
+    padding: 0.6rem 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+#gift-card-widget-root .hh-gift__preset:hover {
+    background: #ece5dc;
+}
+
+#gift-card-widget-root .hh-gift__preset.is-selected {
+    background: #3a2a20;
+    color: white;
+    border-color: #3a2a20;
+}
+
+.hh-gift__custom {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.95rem;
+}
+
+.hh-gift__custom input {
+    padding: 0.6rem 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.hh-gift__error {
+    background: #fdecec;
+    border: 1px solid #e0a0a0;
+    color: #7a1f1f;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    margin: 0 0 0.75rem 0;
+    font-size: 0.95rem;
+}
+
+.hh-gift form > button[type="submit"] {
+    width: 100%;
+    margin-top: 0.25rem;
+}
+
+.hh-gift form > button[type="submit"]:disabled {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+.hh-gift__small {
+    font-size: 0.8rem;
+    color: #777;
+    margin: 0.75rem 0 0 0;
+}
+
+.hh-gift__thanks {
+    text-align: center;
+}
+
+.hh-gift__thanks h3 {
+    color: #3a2a20;
+    margin: 0 0 0.5rem 0;
+}
+
+#gift-card-widget-root .hh-gift__link {
+    background: none;
+    color: #3a2a20;
+    border: none;
+    text-decoration: underline;
+    font-size: 0.95rem;
+    cursor: pointer;
+    padding: 0.25rem 0;
+}

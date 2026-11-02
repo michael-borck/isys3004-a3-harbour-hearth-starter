@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Menu - Harbour &amp; Hearth</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/analytics.js"></script>
+    <script src="assets/js/nav.js"></script>
+    <script src="gift-card-widget/dist/gift-card-widget.iife.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="brand">
+            <h1>Harbour &amp; Hearth</h1>
+            <p class="tagline">Coffee, bread, community</p>
+        </div>
+        <nav class="site-nav">
+            <a href="index.html">Home</a>
+            <a href="menu.html" aria-current="page">Menu</a>
+            <a href="booking.html">Bookings</a>
+            <a href="team.html">Our Team</a>
+            <a href="gift-card.html">Gift cards</a>
+            <a href="/wp/">News</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="menu">
+            <h2>What's on the shelf today</h2>
+            <p>Updated every 30 minutes across all three locations. If something you want isn't listed, call us. We often have more in the back.</p>
+
+            <div id="menu-list">
+                <!-- populated by menu.js -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Harbour &amp; Hearth Pty Ltd. ABN 12 345 678 901.</p>
+        <p>Questions? Email <a href="mailto:hello@harbourandhearth.com.au">hello@harbourandhearth.com.au</a></p>
+    </footer>
+
+    <script src="assets/js/menu.js"></script>
+</body>
+</html>
